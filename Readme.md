@@ -17,7 +17,9 @@ For å kunne kjøre applikasjonen, krever det at du har følgende installert:
 * Visual Studio
 * .NET SDK (nyeste versjon), se https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/install
 * Last ned frontendappen fra GitHub eller opprett en Blazor WebAssembly app
+
 For mer info for å komme i gang se: https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro
+
 For info om Blazor se: https://blazor-university.com/
 
 ### Oppstart av applikasjonen
