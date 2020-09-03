@@ -1,0 +1,36 @@
+﻿@page "/book-list"
+@using BlazorWorkshopFrontend.Models
+
+<h1>Egdes Library 4 Dummies</h1>
+
+<table>
+    <tr>
+        <th>Boktittel</th>
+        <th>Forfatter</th>
+        <th>Utlånsstatus</th>
+    </tr>
+    @if (Books != null)
+    {
+        @foreach (var book in Books)
+        {
+            <tr>
+                <td>@book.Name</td>
+                <td>@book.Author</td>
+                <td>@book.Status</td>
+            </tr>
+        }
+    }
+</table>
+
+@code {
+    [Inject]
+    public HttpClient HttpClient { get; set; }
+
+    private BookDto[] Books { get; set; } = new [] { new BookDto() };
+
+    protected override async Task OnInitializedAsync()
+    {
+        Books = await HttpClient.GetFromJsonAsync<BookDto[]>("api/library/books");
+    }
+
+}
